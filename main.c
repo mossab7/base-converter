@@ -65,7 +65,7 @@ void print_ascii_art(const char* text) {
             } else if (c == '-') {
                 index = 37;
             } else {
-                index = 38; // Space for any other character
+                index = 38;
             }
             printf("%s ", ascii_chars[index][row]);
         }
