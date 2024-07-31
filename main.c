@@ -65,7 +65,7 @@ void print_ascii_art(const char* text) {
             } else if (c == '-') {
                 index = 37;
             } else {
-                index = 38;
+                index = 38; // Space for any other character
             }
             printf("%s ", ascii_chars[index][row]);
         }
@@ -73,14 +73,19 @@ void print_ascii_art(const char* text) {
     }
 }
 
-void print_prompt(const char* message) {
+void print_prompt(const char* message, const char *result) {
     printf("\n");
     printf("    *--------------------------*\n");
     printf("    |                          |\n");
     printf("    |  %-24s|\n", message);
     printf("    |                          |\n");
     printf("    *--------------------------*\n");
-    printf("    > ");
+    if(strcmp(message,"result"))
+      printf("    > %s",result);
+    else if(strcmp(message,"conversion failed"))
+      printf("    > %s",result);
+    else
+      printf("    > ");
 }
 
   void print_banner() 
@@ -115,31 +120,32 @@ int main(void)
   char base_to[100];
   char *result;
   
-  print_prompt("number: ");
-  scanf("%99s", nbr);
-  print_prompt("base from: ");
-  scanf("%99s", base_from);
-  print_prompt("base to: ");
-  scanf("%99s", base_to);
-  result = ft_convert_base(nbr, base_from, base_to);
-   if (result) {
-        printf("\n");
-        printf("    *--------------------------*\n");
-        printf("    |                          |\n");
-        printf("    |        RESULT IS:        |\n");
-        printf("    |                          |\n");
-        printf("    *--------------------------*\n");
-        printf("\n");
-        print_ascii_art(result);
-        free(result);
-    } else {
-        printf("\n");
-        printf("    *--------------------------*\n");
-        printf("    |                          |\n");
-        printf("    |    Conversion failed.    |\n");
-        printf("    |                          |\n");
-        printf("    *--------------------------*\n");
+  while(1)
+  {
+    print_prompt("number (or 'quit') : ","");
+    scanf("%99s", nbr);
+    if(strcmp(nbr, "quit") == 0 || strcmp(nbr, "QUIT") == 0)
+    {
+      print_prompt("Exiting program...","Goodbye!");
+      break;
     }
+    print_prompt("base from: ","");
+    scanf("%99s", base_from);
+    print_prompt("base to: ","");
+    scanf("%99s", base_to);
+    result = ft_convert_base(nbr, base_from, base_to);
+     if (result) 
+      {
+          print_prompt("result: ",result);
+          printf("\n");
+          print_ascii_art(result);
+          free(result);
+      }
+    else 
+        {
+           print_prompt("conversion failed","try again 'base shouldn't contain doubles'");
+        }
+  }
   
   return 0;
 }
