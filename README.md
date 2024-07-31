@@ -20,18 +20,15 @@ This project is a base converter program written in C. It converts numbers from 
 1. Clone the repository:
    ```
    git clone https://github.com/mossab7/base-converter.git && cd base-converter
-   
    ```
 
 2. Compile the program:
    ```
    make
-
    ```
 
 3. Run the program:
    ```
    ./base_converter
-
    ```
 
