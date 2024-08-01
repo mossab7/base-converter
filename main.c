@@ -112,12 +112,26 @@ void print_prompt(const char* message, const char *result) {
     printf("\n");
 }
 
+int is_base(char *base)
+{
+  if(!(*base == '\''))
+    return 0;
+  char *start = base + 1;
+  while(*base)
+    base++;
+  if(!(*(base - 1) == '\''))
+    return 0;
+  return(atoi(start));
+}
+
 int main(void)
 {
   print_banner();
   char nbr[100];
   char base_from[100];
   char base_to[100];
+  const char *upper_base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const char *lower_base = "0123456789abcdefghijklmnopqrstuvwxyz";
   char *result;
   
   while(1)
@@ -131,8 +145,36 @@ int main(void)
     }
     print_prompt("base from: ","");
     scanf("%99s", base_from);
+    int base_from_value = is_base(base_from);
+    if(base_from_value >= 2)
+    {
+      if(isupper(*nbr) || isdigit(*nbr))
+      {
+        strncpy(base_from,upper_base,is_base(base_from));
+        base_from[base_from_value] = '\0';
+      }
+      else
+      { 
+        strncpy(base_from,lower_base,is_base(base_from));
+        base_from[base_from_value] = '\0';
+      }
+    }
     print_prompt("base to: ","");
     scanf("%99s", base_to);
+    int base_to_value = is_base(base_to);
+    if(base_to_value >= 2)
+    {
+      if(isupper(*nbr) || isdigit(*nbr))
+      {
+        strncpy(base_to,upper_base,is_base(base_to));
+        base_to[base_to_value] = '\0';
+      }
+      else
+      { 
+        strncpy(base_to,lower_base,is_base(base_to));
+        base_to[base_to_value] = '\0';
+      }
+    }
     result = ft_convert_base(nbr, base_from, base_to);
      if (result) 
       {
@@ -143,10 +185,9 @@ int main(void)
       }
     else 
         {
-           print_prompt("conversion failed","try again 'base shouldn't contain doubles'");
+           print_prompt("conversion failed","try again 'base shouldn't contain doubles or be less then 2'");
         }
-  }
-  
+  } 
   return 0;
 }
 
