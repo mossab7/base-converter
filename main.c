@@ -145,6 +145,7 @@ int main(void)
     }
     print_prompt("base from: ","");
     scanf("%99s", base_from);
+<<<<<<< HEAD
     int base_from_value = is_base(base_from);
     if(base_from_value >= 2)
     {
@@ -175,6 +176,10 @@ int main(void)
         base_to[base_to_value] = '\0';
       }
     }
+=======
+    print_prompt("base to: ","");
+    scanf("%99s", base_to);
+>>>>>>> 268ca51899b35df0cbd44a040dacd0be4329b814
     result = ft_convert_base(nbr, base_from, base_to);
      if (result) 
       {
@@ -185,9 +190,16 @@ int main(void)
       }
     else 
         {
+<<<<<<< HEAD
            print_prompt("conversion failed","try again 'base shouldn't contain doubles or be less then 2'");
         }
   } 
+=======
+           print_prompt("conversion failed","try again 'base shouldn't contain doubles'");
+        }
+  }
+  
+>>>>>>> 268ca51899b35df0cbd44a040dacd0be4329b814
   return 0;
 }
 
