@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
-#include "ft_convert_base2.h"
+
 int	find_index(char *base, char digit)
 {
 	int	i;
