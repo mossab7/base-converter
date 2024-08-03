@@ -146,7 +146,7 @@ while(1)
     print_prompt("base from: ","");
     scanf("%99s", base_from);
     int base_from_value = is_base(base_from);
-    if(base_from_value >= 2)
+    if(base_from_value >= 2 && base_from_value <= 36)
     {
       if(isupper(*nbr) || isdigit(*nbr))
       {
@@ -162,7 +162,7 @@ while(1)
     print_prompt("base to: ","");
     scanf("%99s", base_to);
     int base_to_value = is_base(base_to);
-    if(base_to_value >= 2)
+    if(base_to_value >= 2 && base_to_value <= 36)
     {
       if(isupper(*nbr) || isdigit(*nbr))
       {
