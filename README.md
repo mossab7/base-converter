@@ -34,7 +34,7 @@ This project is a base converter program written in C. It converts numbers from 
 ## Examples 
 
 ### you can do :
-**```plaintext**
+```plaintext
 ./base_converter
              @      @
      / \     { _____}      / \
@@ -88,8 +88,9 @@ This project is a base converter program written in C. It converts numbers from 
 ***   ***   
 *     *     
 *     *     
-**```**
+```
 ### or you can:
+```plaintext
     *--------------------------*
     |                          |
     |  number (or 'quit') :    |
@@ -122,3 +123,4 @@ This project is a base converter program written in C. It converts numbers from 
 *     *     
 *     *     
 
+```
