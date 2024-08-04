@@ -31,9 +31,10 @@ This project is a base converter program written in C. It converts numbers from 
    ```
    ./base_converter
    ```
-## Examples 
+## Usage Instructions
 
-### you can do :
+### 1. Interactive Example:
+#### You can run the program interactively to convert numbers between bases. Here's how it looks:
 ```plaintext
 ./base_converter
              @      @
@@ -89,7 +90,8 @@ This project is a base converter program written in C. It converts numbers from 
 *     *     
 *     *     
 ```
-### or you can:
+### 2. Quick Conversion Example:
+#### Alternatively, you can perform a quick conversion with minimal input:
 ```plaintext
     *--------------------------*
     |                          |
