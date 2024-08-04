@@ -34,7 +34,7 @@ This project is a base converter program written in C. It converts numbers from 
 ## Examples 
 
 ### you can do :
-
+```plaintext
 ./base_converter
              @      @
      / \     { _____}      / \
