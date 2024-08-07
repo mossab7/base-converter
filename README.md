@@ -126,3 +126,22 @@ This project is a base converter program written in C. It converts numbers from 
 *     *     
 
 ```
+### 3. Exiting the program:
+####  Type 'quit' (without quotes) when prompted for a number:
+
+```
+
+    *--------------------------*
+    |                          |
+    |  number (or 'quit') :    |
+    |                          |
+    *--------------------------*
+    > quit
+
+    *--------------------------*
+    |                          |
+    |  Exiting program...      |
+    |                          |
+    *--------------------------*
+    > Goodbye!                                                                                
+```
