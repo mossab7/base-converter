@@ -12,9 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int		valid_base(char *base);
-long	atoi_base(char *str, char *base, int len);
+#include "ft_convert_base.h"
 
 int	number_lenght(long number, int base_len)
 {

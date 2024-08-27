@@ -21,11 +21,11 @@ else
     $(error Unsupported operating system: $(DETECTED_OS))
 endif
 
-SOURCES := main.c ft_convert_base.c ft_convert_base2.c
+SOURCES := ft_convert_base.c ft_convert_number_utilities.c ft_convert_base_utilities.c
 
 OBJECTS := $(SOURCES:.c=.o)
 
-HEADERS := ft_convert_base.h ft_convert_base2.h
+HEADERS := ft_convert_base.h 
 
 all: $(EXECUTABLE)
 
